@@ -1,0 +1,49 @@
+{
+  "kind": "local-public-source-preflight",
+  "rpc": "https://eth.drpc.org",
+  "contract_source_sha256": "f56bd5a626ef6f748ab1db3c39bb534a19ed70e5225127f5929708c8bc5276ca",
+  "checked_at": "2026-10-21T09:41:57.911765+00:00",
+  "result": {
+    "reverse_name": "xebber.eth",
+    "namehash": "0x27ce3046ab3a62c29f981e872996cdea9a7e87e551ab589850b3eeecbf87d59e"
+  },
+  "responses": [
+    {
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "eth_call",
+        "params": [
+          {
+            "to": "0x00000000000c2e074ec69a0dfb2997ba6c7d2e1e",
+            "data": "0x0178b8bff0e885da82b5a9f9bda6b8e4a28cd5f5023d9ea99f0982e4b3bdb4e8979c7123"
+          },
+          "finalized"
+        ]
+      },
+      "raw_sha256": "12927351321b1fc493e70a3c5d2c39aae7e229e5d84a4c6461771e91c82e09ac",
+      "bytes": 102,
+      "raw_utf8": "{\"id\":1,\"jsonrpc\":\"2.0\",\"result\":\"0x000000000000000000000000f29100983e058b709f3d539b0c765937b804ac15\"}",
+      "result": "0x000000000000000000000000f29100983e058b709f3d539b0c765937b804ac15"
+    },
+    {
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "eth_call",
+        "params": [
+          {
+            "to": "0xf29100983e058b709f3d539b0c765937b804ac15",
+            "data": "0x691f3431f0e885da82b5a9f9bda6b8e4a28cd5f5023d9ea99f0982e4b3bdb4e8979c7123"
+          },
+          "finalized"
+        ]
+      },
+      "raw_sha256": "eeeb6311adb65de636bd40b8882217dd9d7a73480a08fa8aa350584e1158eb84",
+      "bytes": 230,
+      "raw_utf8": "{\"id\":1,\"jsonrpc\":\"2.0\",\"result\":\"0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000a7865626265722e65746800000000000000000000000000000000000000000000\"}",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000a7865626265722e65746800000000000000000000000000000000000000000000"
+    }
+  ],
+  "limitation": "Local RPC transport; no GenVM execution, deployment or GenLayer consensus established."
+}

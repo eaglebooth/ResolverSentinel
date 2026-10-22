@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-21T10:28:54.815Z",
+  "network": "GenLayer StudioNet",
+  "chain_id": 61999,
+  "contract": "0xf0090b257FF2178B84faE25f137a49Edf6a70938",
+  "source_parity": {
+    "byte_for_byte": true,
+    "local_bytes": 24604,
+    "deployed_bytes": 24604,
+    "local_sha256": "f56bd5a626ef6f748ab1db3c39bb534a19ed70e5225127f5929708c8bc5276ca",
+    "deployed_sha256": "f56bd5a626ef6f748ab1db3c39bb534a19ed70e5225127f5929708c8bc5276ca"
+  },
+  "version": "resolver-sentinel/0.1.0",
+  "stats": {
+    "assessments": 6,
+    "promotions": 3,
+    "watches": 6
+  },
+  "deployment_transaction": {
+    "hash": "0xd6f61af7b0b0da5415c6829197f4bd0358c69289344fb456e6170d0a56a4bb6a",
+    "from": "0x5591ad55A861925bf04880104aa70076bAE87C91",
+    "expected_deployer": "0x5591ad55A861925bf04880104aa70076bAE87C91",
+    "deployer_matches": true,
+    "to": "0xf0090b257FF2178B84faE25f137a49Edf6a70938",
+    "status": "FINALIZED",
+    "consensus": "MAJORITY_AGREE",
+    "leader_execution": "SUCCESS",
+    "deploy_source_sha256": "f56bd5a626ef6f748ab1db3c39bb534a19ed70e5225127f5929708c8bc5276ca",
+    "deploy_source_matches_local": true
+  }
+}

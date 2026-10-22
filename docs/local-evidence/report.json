@@ -1,0 +1,84 @@
+{
+  "kind": "local-verification",
+  "checked_at": "2026-10-22T01:32:08.421949+00:00",
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_resolver_sentinel.py",
+        "tests/test_public_source_pair.py",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "exit_code": 0,
+      "log": "command-1.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "pytest",
+        "tests/direct",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "exit_code": 0,
+      "log": "command-2.txt"
+    },
+    {
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "genvm_linter.cli",
+        "check",
+        "contracts/resolver_sentinel.py"
+      ],
+      "exit_code": 0,
+      "log": "command-3.txt"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/postconditions.test.mjs"
+      ],
+      "exit_code": 0,
+      "log": "command-4.txt"
+    },
+    {
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "log": "command-5.txt"
+    },
+    {
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exit_code": 0,
+      "log": "command-6.txt"
+    },
+    {
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "command-7.txt"
+    }
+  ],
+  "scope": "Controlled local tests and production build; not GenVM execution or live consensus evidence.",
+  "passed": true
+}

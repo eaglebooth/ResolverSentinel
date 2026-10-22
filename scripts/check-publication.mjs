@@ -1,0 +1,31 @@
+import {spawnSync} from 'node:child_process';
+import {createRequire} from 'node:module';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const listing=spawnSync('git',['ls-files','-z'],{encoding:'utf8'});
+if(listing.error||listing.status!==0)throw listing.error||new Error('Cannot enumerate tracked publication files');
+const files=listing.stdout.split('\0').filter(Boolean);
+const keytar=createRequire('C:/Users/admin/AppData/Roaming/npm/node_modules/genlayer/dist/index.js')('keytar');
+const secrets=await Promise.all(['dbl-owner','dbl-adapter'].map(a=>keytar.getPassword('genlayer-cli',`account:${a}`)));
+assert.ok(secrets.every(Boolean),'Test-key scan cannot complete without the two known keychain entries');
+const findings=[];
+for(const file of files){
+ if(/(^|\/)(node_modules|\.next|\.vercel|artifacts)\//.test(file)||/(^|\/)\.env($|\.)/.test(file)&&file!=='.env.example')findings.push(file);
+ const value=readFileSync(file).toString('utf8');
+ if(secrets.some(secret=>value.includes(secret.replace(/^0x/,''))))findings.push(file);
+ if(/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|github_pat_[A-Za-z0-9_]{30,}|ghp_[A-Za-z0-9]{30,}/.test(value))findings.push(file);
+}
+assert.deepEqual(findings,[],'Publication secret/file exclusion check failed (paths only): '+findings.join(', '));
+const local=readFileSync('contracts/resolver_sentinel.py');
+const staged=spawnSync('git',['show',':contracts/resolver_sentinel.py']).stdout;
+assert.ok(staged,'Cannot read staged contract bytes');
+assert.ok(local.equals(staged),'Git-normalized contract bytes differ from deployed source');
+const sha=createHash('sha256').update(staged).digest('hex');
+assert.equal(sha,'f56bd5a626ef6f748ab1db3c39bb534a19ed70e5225127f5929708c8bc5276ca');
+const primary=JSON.parse(readFileSync('docs/live-evidence/studionet-20261021-primary.json'));
+const positive=JSON.parse(readFileSync('docs/live-evidence/studionet-20261021-positive.json'));
+const md=readFileSync('docs/LIVE_STUDIONET_EVIDENCE.md','utf8');
+const steps=[...primary.steps,...positive.steps];
+assert.equal(steps.length,46);assert.ok(steps.every(s=>s.verified&&s.status==='FINALIZED'&&md.includes('/tx/'+s.hash)));
+console.log(JSON.stringify({files:files.length,secret_matches:0,contract_git_bytes_match:true,contract_sha256:sha,linked_finalized_tests:46}));

@@ -1,0 +1,12 @@
+✔ assessment readback accepts the exact source pair and revision (1.9209ms)
+✔ another transaction reaching the same status cannot masquerade as this assessment (0.4809ms)
+✔ a negative verdict must not retain a consumable receipt (0.231ms)
+✔ promotion verifies receipt consumption and finalized Ethereum anchor (0.3464ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 301.7555

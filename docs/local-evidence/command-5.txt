@@ -1,0 +1,11 @@
+
+> resolver-sentinel@0.1.0 lint
+> eslint
+
+
+G:\Genlayer\ResolverSentinel\scripts\check-publication.mjs
+  1:9   warning  'spawnSync' is defined but never used      @typescript-eslint/no-unused-vars
+  1:19  warning  'createRequire' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 2 problems (0 errors, 2 warnings)
+

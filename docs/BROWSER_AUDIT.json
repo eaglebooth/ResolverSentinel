@@ -1,0 +1,23 @@
+{
+  "kind": "local-browser-audit",
+  "url": "http://127.0.0.1:3026",
+  "checked_at": "2026-10-21T01:13:43.579Z",
+  "assertions": [
+    "desktop: no overflow, logo loaded, unconfigured writes blocked, no false source-live claim",
+    "desktop: procedure 2 opens (Capture origin)",
+    "desktop: procedure 3 opens (Observe drift)",
+    "desktop: procedure 4 opens (Run consensus)",
+    "desktop: procedure 5 opens (Promote contact)",
+    "mobile: no overflow, logo loaded, unconfigured writes blocked, no false source-live claim",
+    "mobile: procedure 2 opens (Capture origin)",
+    "mobile: procedure 3 opens (Observe drift)",
+    "mobile: procedure 4 opens (Run consensus)",
+    "mobile: procedure 5 opens (Promote contact)"
+  ],
+  "errors": [],
+  "screenshots": [
+    "G:\\Genlayer\\ResolverSentinel\\docs\\screenshots\\desktop.png",
+    "G:\\Genlayer\\ResolverSentinel\\docs\\screenshots\\mobile.png"
+  ],
+  "limitation": "Local UI/layout smoke test only; no wallet signature or deployed contract exercised."
+}
